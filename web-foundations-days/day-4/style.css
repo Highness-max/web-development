@@ -1,0 +1,201 @@
+/* ============================================================
+   1. CSS variables for the LIGHT theme
+   ============================================================ */
+:root {
+  --bg: #f4f6f8;
+  --text: #222222;
+  --card-bg: #ffffff;
+  --header-bg: #8e0000;
+  --header-text: #ffffff;
+  --primary: #0ba184;
+  --primary-hover: #088a70;
+  --danger: #8e0000;
+  --danger-hover: #6b0000;
+  --border: #cccccc;
+  --muted: #777777;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================================
+   2. Dark theme — only redefines the variables
+   ============================================================ */
+body.dark {
+  --bg: #121212;
+  --text: #eaeaea;
+  --card-bg: #1e1e1e;
+  --header-bg: #3a0000;
+  --header-text: #ffffff;
+  --border: #444444;
+  --muted: #999999;
+  --shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================================
+   3. Reset
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   4. Body
+   ============================================================ */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ============================================================
+   5. Header
+   ============================================================ */
+header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  text-align: center;
+  padding: 24px 16px;
+}
+
+header h1 {
+  margin: 0 0 8px 0;
+}
+
+header p {
+  margin: 0;
+}
+
+/* ============================================================
+   6. Main card
+   ============================================================ */
+main {
+  max-width: 720px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+section {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px var(--shadow);
+  transition: background-color 0.2s ease;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+/* ============================================================
+   7. Textarea
+   ============================================================ */
+textarea {
+  width: 100%;
+  padding: 12px;
+  font: inherit;
+  color: var(--text);
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   8. Counters
+   ============================================================ */
+#char-count,
+#word-count {
+  margin: 8px 0 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* State classes for the character counter */
+.warning {
+  color: orange;
+}
+
+.over {
+  color: red;
+  font-weight: bold;
+}
+
+/* ============================================================
+   9. Buttons
+   ============================================================ */
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+button {
+  font: inherit;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#clear-btn {
+  background-color: var(--danger);
+  color: white;
+}
+
+#clear-btn:hover {
+  background-color: var(--danger-hover);
+  transform: translateY(-2px);
+}
+
+#theme-toggle {
+  background-color: var(--primary);
+  color: white;
+}
+
+#theme-toggle:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   10. Footer
+   ============================================================ */
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 16px;
+}
+
+/* ============================================================
+   11. Small screens
+   ============================================================ */
+@media (max-width: 600px) {
+  header {
+    padding: 16px 8px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
